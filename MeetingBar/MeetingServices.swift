@@ -36,7 +36,7 @@ enum MeetingServices: String, Codable, CaseIterable {
     case starleaf = "StarLeaf"
     case duo = "Google Duo"
     case voov = "Tencent VooV"
-    case facebook_workspace = "Facebook Workspace"
+    case meta_workplace = "Workplace from Meta"
     case lifesize = "Lifesize"
     case skype = "Skype"
     case skype4biz = "Skype For Business"
@@ -281,7 +281,7 @@ struct LinksRegex {
     let starleaf = try! NSRegularExpression(pattern: #"https?://meet\.starleaf\.com/[^\s]*"#)
     let duo = try! NSRegularExpression(pattern: #"https?://duo\.app\.goo\.gl/[^\s]*"#)
     let voov = try! NSRegularExpression(pattern: #"https?://voovmeeting\.com/[^\s]*"#)
-    let facebook_workspace = try! NSRegularExpression(pattern: #"https?://([a-z0-9-.]+)?workplace\.com/groupcall/[^\s]+"#)
+    let workplace_meta = try! NSRegularExpression(pattern: #"https?://([a-z0-9-.]+)?workplace\.com/groupcall/[^\s]+"#)
     let skype = try! NSRegularExpression(pattern: #"https?://join\.skype\.com/[^\s]*"#)
     let lifesize = try! NSRegularExpression(pattern: #"https?://call\.lifesizecloud\.com/[^\s]*"#)
     let youtube = try! NSRegularExpression(pattern: #"https?://((www|m)\.)?(youtube\.com|youtu\.be)/[^\s]*"#)
@@ -492,8 +492,8 @@ func getIconForMeetingService(_ meetingService: MeetingServices?) -> NSImage {
         image.size = NSSize(width: 16, height: 16)
 
     // tested and verified
-    case .some(.facebook_workspace):
-        image = NSImage(named: "facebook_workplace_icon")!
+    case .some(.meta_workplace):
+        image = NSImage(named: "meta_workplace_icon")!
         image.size = NSSize(width: 16, height: 16)
 
     // tested and verified
