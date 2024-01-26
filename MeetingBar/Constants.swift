@@ -14,6 +14,8 @@ var ZoomAppBrowser = Browser(name: "Zoom", path: "")
 var TeamsAppBrowser = Browser(name: "Teams", path: "")
 var JitsiAppBrowser = Browser(name: "Jitsi", path: "")
 var SlackAppBrowser = Browser(name: "Slack", path: "")
+// The product is Workplace from Meta, but the desktop app is Workplace Chat.
+var WorkplaceAppBrowser = Browser(name: "Workplace Chat", path: "")
 
 enum statusbarEventTitleLengthLimits {
     static let min = 5

@@ -246,6 +246,18 @@ func openMeetingURL(_ service: MeetingServices?, _ url: URL, _ browser: Browser?
         } else {
             url.openIn(browser: browser)
         }
+    case .meta_workplace:
+        let browser = browser ?? Defaults[.workplaceBrowser]
+        if browser == WorkplaceAppBrowser {
+            let workplaceUrl = URL(string: "workchat://room/?joinurl=" + url.absoluteString)!
+            let result = workplaceUrl.openInDefaultBrowser()
+            if !result {
+                sendNotification("status_bar_error_app_link_title".loco("Workplace Chat"), "status_bar_error_app_link_message".loco("Workplace Chat"))
+                url.openInDefaultBrowser()
+            }
+        } else {
+            url.openIn(browser: browser)
+        }
     case .facetime:
         NSWorkspace.shared.open(URL(string: "facetime://" + url.absoluteString)!)
     case .facetimeaudio:

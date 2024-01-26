@@ -42,6 +42,7 @@ let meetings = [
     MeetingLink(service: .pumble, url: URL(string: "https://meet.pumble.com/vly-hggs-xsn")!),
     MeetingLink(service: .suitConference, url: URL(string: "https://turkcell.conference.istesuit.com/username")!),
     MeetingLink(service: .doxyMe, url: URL(string: "https://bbc.doxy.me/dr.who")!)
+    MeetingLink(service: .meta_workplace, url: URL(string: "https://test.workplace.com/groupcall/LINK:abcd1234")!)
 ]
 
 class MeetingServicesTests: XCTestCase {
